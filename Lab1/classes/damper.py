@@ -11,25 +11,25 @@
 class Damper(object):
     def __init__(self,  m=1.0, k=1.0, c=1.0):
         self.m = m
-        self.k=k
+        self.k = k
         self.c = c
 
 
     def getAcceleration(self):
-        return ((-1 * self.x * self.k) + (-1* self.x_dot * self.c)) / self.m
+        return ((-1 * self.x * self.k) + (-1 * self.x_dot * self.c)) / self.m
 
 
-    def damp(self, x=1.0, x_dot=0.0,  t=0.01, epoch=1000):
+    def dampOverTime(self, x=1.0, x_dot=0.0,  t=0.01, epoch=1000):
         self.x = x
         self.x_dot = x_dot
    
         retval = []
 
         for n in range(epoch):
-            accelleration = self.getAcceleration()
-            self.x_dot = self.x_dot + accelleration 
-            self.x =self.x + (self.x_dot * t)
-
+            acceleration = self.getAcceleration() * t
+            self.x_dot = self.x_dot + acceleration
+            self.x = self.x + (self.x_dot)
+            print('My current position is now {0}'.format(self.x))
             retval.append(self.x)
 
         return retval

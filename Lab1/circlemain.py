@@ -9,7 +9,7 @@ def main():
     _radii = np.arange(0, 10.5, 0.5)
 
     for r in _radii:
-       print('{0} --> {1}').format(r, _circle.circle_area(r))
+       print('{0} --> {1}'.format(r, _circle.circle_area(r)))
             
 
 
