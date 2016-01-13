@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 from classes.damper import Damper
-import matplotlib.pyplot as plt
+import sys
 
-def select():
+
+#Not used anymore
+def _select():
     isValid = False
     while isValid == False:
         try:
@@ -16,7 +18,16 @@ def select():
     return retValue
 
 
+def select():
+    if len(sys.argv) < 1:
+        print('Please select 1, 2 or 3')
+        quit()
+
+
+
 def main():
+
+
     print(""" 1) - m=1.0, k=1.0, c=0.0, x=1.0, x_dot=0.0
         2) - m=1.0, k=1.0, c=1.0, x=1.0, x_dot=0.0
         3) - m=1.0, k=1.0, c=1.0, x=1.0, x_dot=1.0
