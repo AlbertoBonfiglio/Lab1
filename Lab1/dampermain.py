@@ -53,6 +53,7 @@ _paramsSet = [(1.0, 1.0, 0.0, 1.0, 0.0),
               (1.0, 1.0, 1.0, 1.0, 0.0),
               (1.0, 1.0, 1.0, 1.0, 1.0)]
 
+#Variables
 _outputArray = []
 _printPosition = False
 
