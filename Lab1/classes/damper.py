@@ -26,11 +26,18 @@ class Damper(object):
         retval = []
 
         for n in range(epoch):
+            #calculates the accelleration
             acceleration = self.getAcceleration() * t
+            #updates the velocity
             self.x_dot = self.x_dot + acceleration
+            #updates the position
             self.x = self.x + (self.x_dot)
+
+            #if needed prints out the current position
             if out == True :
-                print('My current position is now {0}'.format(self.x))
+                print('{0}'.format(self.x))
+
+            #append the position to the return array
             retval.append(self.x)
 
         return retval
